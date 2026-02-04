@@ -25,3 +25,4 @@ for i in range(200):
         shutil.move(src_path, dest_path)
 
 print("Images organized into folders successfully!")
+
