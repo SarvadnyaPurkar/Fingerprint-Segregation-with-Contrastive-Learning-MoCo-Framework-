@@ -2,7 +2,8 @@ import os
 import shutil
 
 # Define the root folder containing the 800 subfolders
-root_folder = r"C:\\Users\\sarva\\Downloads\\FingerPrintDataset\\FingerPrintProject\\augmented_images"
+base_dir = "data" 
+root_folder = os.path.join(base_dir, "augmented_images")
 
 # Get a list of all subfolders and sort them
 subfolders = sorted([f for f in os.listdir(root_folder) if os.path.isdir(os.path.join(root_folder, f))])
@@ -32,3 +33,4 @@ for i in range(combined_folder_count):
         os.rmdir(folder_path)
 
 print("Folders combined successfully!")
+
