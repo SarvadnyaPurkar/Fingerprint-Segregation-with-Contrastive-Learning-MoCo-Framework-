@@ -97,9 +97,11 @@ def augment_and_save(input_folder, output_folder):
     print(f"Augmentation completed. Augmented images saved to {output_folder}.")
 
 def main():
-    raw_dataset_path = r"C:\Users\sarva\Downloads\FingerPrintDataset\FingerPrintProject\raw_images"
-    denoised_dataset_path = r"C:\Users\sarva\Downloads\FingerPrintDataset\FingerPrintProject\denoise_images"
-    augmented_dataset_path = r"C:\Users\sarva\Downloads\FingerPrintDataset\FingerPrintProject\augmented_images"
+    # the directory of dataset
+    base_dir = "data"
+    raw_dataset_path = os.path.join(base_dir, "raw_images") 
+    denoised_dataset_path = os.path.join(base_dir, "denoise_images") 
+    augmented_dataset_path = os.path.join(base_dir, "augmented_images")
 
     model = MWCNN()
     print("Starting denoising...")
@@ -110,3 +112,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
