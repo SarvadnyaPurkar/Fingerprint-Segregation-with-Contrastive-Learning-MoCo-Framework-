@@ -45,7 +45,8 @@ transform = transforms.Compose([
 ])
 
 # Create dataset and dataloader
-dataset = FingerprintDataset(root_dir=r"C:\\Users\\sarva\\Downloads\\FingerPrintDataset\\FingerPrintProject\\denoise_images", transform=transform)
+base_dir = "data"
+dataset = FingerprintDataset( root_dir=os.path.join(base_dir, "denoise_images"), transform=transform )
 dataloader = DataLoader(dataset, batch_size=8, shuffle=True, num_workers=4)
 
 # 2. MoCo Implementation
@@ -134,3 +135,4 @@ def train_moco(dataloader, epochs=100, save_path="fingerprint_moco_weights.pth")
 # 4. Run Training
 if __name__ == "__main__":
     train_moco(dataloader, epochs=100, save_path="fingerprint_moco_weights.pth")
+
