@@ -75,7 +75,8 @@ def extract_features(image_paths, num_samples=5):
     return np.array(features), labels
 
 # Path to the folder containing the augmented images (adjust to your folder path)
-image_folder = r"C:\\Users\\sarva\\Downloads\\FingerPrintDataset\\FingerPrintProject\\Final_images"  # Replace with the actual path to your image folder
+base_dir = "data" 
+image_folder = os.path.join(base_dir, "Final_images")  # Replace with the actual path to your image folder
 
 # Extract features from the images (5 images per person)
 features, labels = extract_features(image_folder, num_samples=4)
@@ -110,3 +111,4 @@ plt.legend(title="Person", bbox_to_anchor=(1.05, 1), loc='upper left')
 # Show the plot with a tight layout
 plt.tight_layout()
 plt.show()
+
